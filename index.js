@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require("path");
 
 
-// TODO: Create an array of questions for user input
 inquirer
   .prompt([
     {
@@ -55,7 +54,7 @@ inquirer
       },
   ])
   .then((data) => {
-    const { name, location, bio, linkedin, github } = data;
+    const { title, describewhat, describewhy, installation, usage, contributors, license, github, email } = data;
     let htmlContent = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -69,11 +68,30 @@ inquirer
       </style>
     </head>
     <body>
-      <h1>My name is ${name}</h1>
-      <h2>I live in ${location}</h2>
-      <h3>You should know ${bio}</h3>
-      <h4>My LinkedIn is ${linkedin}</h4>
-      <h5>My GitHub is ${github}</h5>
+      <h1># ${title}</h1>
+      <p>add license badge here ${license}</p>
+      <h2>##Description</h2>
+      <p>${describewhy}</p>
+      <p>${describewhat}</p>
+      <h3##>Table of Contents</h3>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#contributors">Contributors</a></li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#questions">Questions</a></li>
+
+
+      <h3 id="installation">##Installation</h3>
+      <p>${installation}</p>
+      <h3 id="usage">##Usage</h3>
+      <p>${usage}</p>
+      <h3 id="contributors">##Contributors</h3>
+      <p>${contributors}</p>
+      <h3 id="license">##License</h3>
+      <p>${license}</p>
+      <h3 id="questions">##Questions</h3>
+      <p>If you have questions about this or other projects, get in touch through <a href="mailto:${email}">email</a> 
+      or find me on <a href="https://github.com/${github}">GitHub</a></p>
 
     </body>
     </html>`
@@ -88,10 +106,10 @@ inquirer
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();

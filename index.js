@@ -37,10 +37,10 @@ inquirer
         name: 'contributors',
       },
       {
-          //need to choose from list of licenses, not type it in
-        type: 'input',
+        type: 'list',
         message: 'What license would you like to add (https://choosealicense.com/)?',
         name: 'license',
+        choices: ['GNU_GPLv3', 'MIT', 'example 3']
       },
       {
       type: 'input',
@@ -55,61 +55,38 @@ inquirer
   ])
   .then((data) => {
     const { title, describewhat, describewhy, installation, usage, contributors, license, github, email } = data;
-    let htmlContent = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-      <style>
-      html {
-          color: indigo;
-      }
-      </style>
-    </head>
-    <body>
-      <h1># ${title}</h1>
-      <p>add license badge here ${license}</p>
-      <h2>##Description</h2>
-      <p>${describewhy}</p>
-      <p>${describewhat}</p>
-      <h3##>Table of Contents</h3>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#usage">Usage</a></li>
-      <li><a href="#contributors">Contributors</a></li>
-      <li><a href="#license">License</a></li>
-      <li><a href="#questions">Questions</a></li>
+    
+    let mdContent = `
+# ${title}
+ 
+![License:${license}](https://img.shields.io/badge/License-${license}-blue.svg)
+
+## Description
+${describewhy}
+${describewhat}
+Table of Contents
+Installation
+Usage
+Contributors
+License
+Questions
 
 
-      <h3 id="installation">##Installation</h3>
-      <p>${installation}</p>
-      <h3 id="usage">##Usage</h3>
-      <p>${usage}</p>
-      <h3 id="contributors">##Contributors</h3>
-      <p>${contributors}</p>
-      <h3 id="license">##License</h3>
-      <p>${license}</p>
-      <h3 id="questions">##Questions</h3>
-      <p>If you have questions about this or other projects, get in touch through <a href="mailto:${email}">email</a> 
-      or find me on <a href="https://github.com/${github}">GitHub</a></p>
-
-    </body>
-    </html>`
+## Installation
+${installation}
+## Usage
+${usage}
+## Contributors
+${contributors}
+## License
+${license}
+## Questions
+If you have questions about this or other projects, get in touch through email at ${email} or find me on GitHub at ${github}`
    
-    const filename = path.join(__dirname,"html","index.html")
+    const filename = path.join(__dirname,"md","README.md")
 
-    fs.writeFile(filename, htmlContent, (err) =>
+    fs.writeFile(filename, mdContent, (err) =>
     err ? console.log(err) : console.log('Success!')
     )
 
   });
-
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();

@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require("path");
@@ -33,8 +32,13 @@ inquirer
       },
       {
         type: 'input',
-        message: 'Who were your contributors (n/a if none)?',
-        name: 'contributors',
+        message: 'What are the contribution guidelines?',
+        name: 'contributing',
+      },
+      {
+        type: 'input',
+        message: 'What are the test instructions?',
+        name: 'test',
       },
       {
         type: 'list',
@@ -54,7 +58,7 @@ inquirer
       },
   ])
   .then((data) => {
-    const { title, describewhat, describewhy, installation, usage, contributors, license, github, email } = data;
+    const { title, describewhat, describewhy, installation, usage, contributing, test, license, github, email } = data;
     
     let mdContent = `
 # ${title}
@@ -64,24 +68,37 @@ inquirer
 ## Description
 ${describewhy}
 ${describewhat}
-Table of Contents
-Installation
-Usage
-Contributors
-License
-Questions
+## Table of Contents
+### [Installation](#installation)
+### [Usage](#usage)
+### [Contributing](#contributing)
+### [Tests](#tests)
+### [License](#license)
+### [Questions](#questions)
 
-
+<a name="installation"></a>
 ## Installation
 ${installation}
+
+<a name="usage"></a>
 ## Usage
 ${usage}
-## Contributors
-${contributors}
+
+<a name="contributing"></a>
+## Contributing
+${contributing}
+
+<a name="tests"></a>
+## Tests
+${test}
+
+<a name="license"></a>
 ## License
 ${license}
+
+<a name="questions"></a>
 ## Questions
-If you have questions about this or other projects, get in touch through email at ${email} or find me on GitHub at ${github}`
+If you have questions about this or other projects, get in touch [through email](mailto:${email}) or [find me on GitHub](https://github.com/${github})`
    
     const filename = path.join(__dirname,"md","README.md")
 
@@ -90,3 +107,6 @@ If you have questions about this or other projects, get in touch through email a
     )
 
   });
+
+  //to do ... find third license
+  //to do ... make video

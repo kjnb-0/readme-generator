@@ -1,11 +1,11 @@
 
-# Readme
+# ReadMe Generator Project
  
 ![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Description
-To make a readme
-Helps make a readme
+Built to help write readmes more efficiently
+This project helps write readmes so you don't have to create one from scratch for every new project. I learned how to better use node.js
 ## Table of Contents
 ### [Installation](#installation)
 ### [Usage](#usage)
@@ -16,19 +16,19 @@ Helps make a readme
 
 <a name="installation"></a>
 ## Installation
-npm, inquirer
+This project uses the Inquirer package - npm install inquirer
 
 <a name="usage"></a>
 ## Usage
-run node index
+Enter node index to start program, then enter your answers
 
 <a name="contributing"></a>
 ## Contributing
-don't
+N/a
 
 <a name="tests"></a>
 ## Tests
-don't
+N/a
 
 <a name="license"></a>
 ## License
@@ -36,4 +36,4 @@ MIT
 
 <a name="questions"></a>
 ## Questions
-If you have questions about this or other projects, get in touch [through email](mailto:krista@email.com) or [find me on GitHub](https://github.com/kjnb-0)
+If you have questions about this or other projects, get in touch [through email](mailto:kbienia@uw.edu) or [find me on GitHub](https://github.com/kjnb-0)

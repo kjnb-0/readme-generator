@@ -44,7 +44,7 @@ inquirer
         type: 'list',
         message: 'What license would you like to add (https://choosealicense.com/)?',
         name: 'license',
-        choices: ['GNU_GPLv3', 'MIT', 'example 3']
+        choices: ['GNU_GPLv3', 'MIT', 'Mozilla_Public_License_2.0', 'The_Unlicense']
       },
       {
       type: 'input',
@@ -107,6 +107,3 @@ If you have questions about this or other projects, get in touch [through email]
     )
 
   });
-
-  //to do ... find third license
-  //to do ... make video

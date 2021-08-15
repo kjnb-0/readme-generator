@@ -4,7 +4,8 @@
 This is an automated README generator build with node.js and inquirer. The user enters answers to prompts in the command line and then a README file is automatically generated with their input. 
 
 ## Usage Video
-![Walkthrough Video](https://drive.google.com/file/d/1iEEPVwp0QNx7Tk_Y07jOdeYtc3kudWWO/view)
+
+https://user-images.githubusercontent.com/80792196/129488715-8c93f1e3-a499-4b34-af35-26731fb8698b.mp4
 
 ## User Story
 
